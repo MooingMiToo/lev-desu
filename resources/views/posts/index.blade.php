@@ -9,7 +9,7 @@
     <body>
         <h1>お薬管理</h1>
         <a href='/posts/create'>新規作成</a>
-        <div class='posts'>
+                <div class='posts'>
             @foreach ($posts as $post)
             
                 <div class='post'>

@@ -18,10 +18,10 @@
             </div>
         </div>
         <div class="edit">
-            <a href="/posts/{{ $post->id }}/edit">編集する</a>
+            <button onclick="window.location.href='/posts/{{ $post->id }}/edit'">編集する</button>
         </div>
         <div class="footer">
-            <a href="/">戻る</a>
+            <button onclick="window.location.href='/'">戻る</button>
         </div>
     </body>
 </html>

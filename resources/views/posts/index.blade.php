@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>お薬管理</h1>
-        <a href='/posts/create'>新規作成</a>
+        <button onclick="window.location.href='/posts/create'">新規作成</button>
                 <div class='posts'>
             @foreach ($posts as $post)
             
@@ -17,11 +17,25 @@
                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
                     <p class='body'>{{ $post->body }}</p>
+                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" onclick="deletePost({{ $post->id }})">削除する</button> 
+                    </form>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+        <script>
+            function deletePost(id) {
+                'use strict'
+        
+                if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                    document.getElementById(`form_${id}`).submit();
+                }
+            }
+        </script>
     </body>
 </html>

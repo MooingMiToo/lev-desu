@@ -6,6 +6,7 @@
         <title>Posts</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    
     </head>
     <body>
         <h1 class="title">
@@ -14,7 +15,8 @@
         <div class="content">
             <div class="content__post">
                 <h3>お薬詳細</h3>
-                <p>{{ $post->body }}</p>    
+                <p>{{ $post->body }}</p>
+                <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
             </div>
         </div>
         <div class="edit">

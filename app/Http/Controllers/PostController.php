@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\PostRequest; // useする
 use App\Models\Category;
+use Cloudinary;
 
 class PostController extends Controller
 {
@@ -25,6 +26,12 @@ class PostController extends Controller
 
     public function store(Post $post, PostRequest $request) // 引数をRequestからPostRequestにする
     {
+        $input = $request['post'];
+        if($request->file('image')){ //画像ファイルが送られた時だけ処理が実行される
+            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input += ['image_url' => $image_url];
+        }
+        
         $input = $request['post'];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);

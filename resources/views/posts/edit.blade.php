@@ -18,6 +18,9 @@
                 <h2>お薬詳細</h2>
                 <input type='text' name='post[body]' value="{{ $post->body }}">
             </div>
+            <div class="image">
+                <input type="file" name="image">
+            </div>
             <input type="submit" value="保存">
         </form>
     </div>

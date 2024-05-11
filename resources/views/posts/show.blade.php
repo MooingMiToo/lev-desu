@@ -19,6 +19,11 @@
                 <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
             </div>
         </div>
+        @if($post->image_url)
+        <div>
+            <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
+        </div>
+        @endif
         <div class="edit">
             <button onclick="window.location.href='/posts/{{ $post->id }}/edit'">編集する</button>
         </div>

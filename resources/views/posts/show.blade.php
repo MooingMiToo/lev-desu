@@ -19,9 +19,10 @@
                 <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
             </div>
         </div>
-        @if($post->image_url)
+        
+        @if($post->image)
         <div>
-            <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
+            <img src="{{ $post->image }}" alt="画像が読み込めません。"/>
         </div>
         @endif
         <div class="edit">

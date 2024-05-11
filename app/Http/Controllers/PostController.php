@@ -29,10 +29,9 @@ class PostController extends Controller
         $input = $request['post'];
         if($request->file('image')){ //画像ファイルが送られた時だけ処理が実行される
             $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
-            $input += ['image_url' => $image_url];
+            $input += ['image' => $image_url];
         }
         
-        $input = $request['post'];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }

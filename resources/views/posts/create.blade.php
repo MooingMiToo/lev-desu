@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>お薬管理</h1>
-        <form action="/posts" method="POST">
+        <form action="/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
                 <h2>お薬名</h2>
@@ -25,6 +25,9 @@
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
+            </div>
+            <div class="image">
+                <input type="file" name="image">
             </div>
             <input type="submit" value="保存"/>
         </form>

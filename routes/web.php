@@ -27,3 +27,6 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::delete('/posts/{post}', [PostController::class,'delete']);
 Route::get('/categories/{category}', [CategoryController::class,'index']);
+Route::get('/posts/create', [PostController::class, 'create']);  //投稿フォームの表示
+Route::post('/posts', [PostController::class, 'store']);  //画像を含めた投稿の保存処理
+Route::get('/posts/{post}', [PostController::class, 'show']); //投稿詳細画面の表示

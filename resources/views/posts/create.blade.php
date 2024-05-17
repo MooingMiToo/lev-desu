@@ -14,9 +14,20 @@
                 <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
             </div>
             <div class="body">
-                <h2>お薬詳細</h2>
-                <textarea name="post[body]" placeholder="文字を入力してください">{{ old('post.body') }}</textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
+                <h2>薬の特徴</h2>
+                <textarea name="post[feature]" placeholder="お薬の特徴を入力してください（例：白色など）">{{ old('post.feature') }}</textarea>
+                
+                <h2>効能効果</h2>
+                <textarea name="post[efficacy]" placeholder="効能効果を入力してください">{{ old('post.efficacy') }}</textarea>
+            
+                
+                <h2>注意事項・副作用</h2>
+                <textarea name="post[attention]" placeholder="注意事項や副作用を入力してください">{{ old('post.attention') }}</textarea>
+
+                
+                <h2>備考欄</h2>
+                <textarea name="post[remark]" placeholder="飲み合わせや薬の期限などを入力してください">{{ old('post.remark') }}</textarea>
+
             </div>
             <div class="category">
                 <h2>お薬の種類</h2>
@@ -31,6 +42,6 @@
             </div>
             <input type="submit" value="保存"/>
         </form>
-        <div class="back"><button onclick="window.location.href='/'">戻る</button></div>
+        <div class="back"><button onclick="window.location.href='/posts'">戻る</button></div>
     </body>
 </html>

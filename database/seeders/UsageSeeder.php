@@ -4,11 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use DateTime;
 
-
-class PostSeeder extends Seeder
+class UsageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,9 +14,9 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('posts')->insert([
-                'title' => '命名の心得',
-                'feature' => '命名はデータを基準に考える',
+       DB::table('usages')->insert([
+                'usage' => '朝食後',
+                'others'=> null,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
          ]);

@@ -14,9 +14,21 @@
         </h1>
         <div class="content">
             <div class="content__post">
-                <h3>お薬詳細</h3>
-                <p>{{ $post->body }}</p>
+                <h3>薬の特徴</h3>
+                <p>{{ $post->feature }}</p>
                 <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                
+                <h3>効能効果</h3>
+                <p>{{ $post->efficacy }}</p>
+               
+                
+                <h3>注意事項・副作用</h3>
+                <p>{{ $post->attention }}</p>
+                
+                
+                <h3>備考欄</h3>
+                <p>{{ $post->remark }}</p>
+                
             </div>
         </div>
         
@@ -29,7 +41,7 @@
             <button onclick="window.location.href='/posts/{{ $post->id }}/edit'">編集する</button>
         </div>
         <div class="footer">
-            <button onclick="window.location.href='/'">戻る</button>
+            <button onclick="window.location.href='/posts'">戻る</button>
         </div>
     </body>
 </html>

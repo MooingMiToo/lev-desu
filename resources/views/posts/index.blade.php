@@ -17,8 +17,9 @@
                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                     </h2>
-                    <p class='body'>{{ $post->body }}</p>
+                    <p class='feature'>{{ $post->feature }}</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                        
                         @csrf
                         @method('DELETE')
                         <button type="button" onclick="deletePost({{ $post->id }})">削除する</button> 

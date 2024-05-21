@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController; 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UsageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,4 @@ Route::delete('/posts/{post}', [PostController::class, 'delete']);
 Route::get('/categories/{category}', [CategoryController::class, 'index']);
 Route::post('/posts', [PostController::class, 'store']); 
 Route::get('/posts/{post}', [PostController::class, 'show']);
+Route::resource('usage', UsageController::class);

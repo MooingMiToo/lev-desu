@@ -17,6 +17,24 @@
                 <h2>薬の特徴</h2>
                 <textarea name="post[feature]" placeholder="お薬の特徴を入力してください（例：白色など）">{{ old('post.feature') }}</textarea>
                 
+                <div class="category">
+                <h2>お薬の種類</h2>
+                <select name="post[category_id]">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+                <h2>用法</h2>
+                @foreach($usages as $usage)
+        
+                    <label>
+                        <input type="checkbox" value="{{ $usage->id }}" name="usages_array[]">
+                            {{$usage->usage}}
+                        </input>
+                    </label>
+            
+                @endforeach 
                 <h2>効能効果</h2>
                 <textarea name="post[efficacy]" placeholder="効能効果を入力してください">{{ old('post.efficacy') }}</textarea>
             
@@ -29,14 +47,7 @@
                 <textarea name="post[remark]" placeholder="飲み合わせや薬の期限などを入力してください">{{ old('post.remark') }}</textarea>
 
             </div>
-            <div class="category">
-                <h2>お薬の種類</h2>
-                <select name="post[category_id]">
-                    @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
-            </div>
+             
             <div class="image">
                 <input type="file" name="image">
             </div>

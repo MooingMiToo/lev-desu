@@ -24,6 +24,7 @@
                 <h2>備考欄</h2>
                 <input type='text' name='post[remark]' value="{{ $post->remark }}">
             </div>
+            
             <div class="image">
                 <input type="file" name="image">
             </div>

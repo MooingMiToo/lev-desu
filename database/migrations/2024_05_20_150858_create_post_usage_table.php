@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('post_usage');
+        
         Schema::create('post_usage', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('usage_id')->constrained('usages');   //参照先のテーブル名を
-            $table->foreignId('post_id')->constrained('posts');    //constrainedに記載
+            $table->foreignId('usage_id')->constrained('usages')->onDelete('cascade');   //参照先のテーブル名を
+            $table->foreignId('post_id')->constrained('posts')->onDelete('cascade');    //constrainedに記載
             $table->primary(['usage_id', 'post_id']);
             $table->timestamps();
         });

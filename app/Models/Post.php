@@ -23,10 +23,15 @@ class Post extends Model
         'attention',
         'remark',
         'category_id',
+        'usage',
         'image',
     ];
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+    public function usages()
+    {
+        return $this->belongsToMany(Usage::class, 'post_usage', 'post_id', 'usage_id');
     }
 }

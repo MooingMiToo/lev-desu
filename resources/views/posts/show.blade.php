@@ -16,7 +16,19 @@
             <div class="content__post">
                 <h3>薬の特徴</h3>
                 <p>{{ $post->feature }}</p>
+                
+                <h3>薬の種類</h3>
                 <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                
+                <h3>用法</h3>
+                 @foreach($usages as $usage)
+        
+                    <label>
+                        <p>{{$usage->usage}}</p>
+                        
+                    </label>
+            
+                @endforeach  
                 
                 <h3>効能効果</h3>
                 <p>{{ $post->efficacy }}</p>

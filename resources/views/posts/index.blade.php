@@ -19,6 +19,13 @@
                     </h2>
                     <p class='feature'>{{ $post->feature }}</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                    
+                    
+                    <h3 class='usage'>
+                    @foreach($post->usages as $usage)   
+                        {{ $usage->usage }}
+                    @endforeach   
+                    </h3>
                         
                         @csrf
                         @method('DELETE')

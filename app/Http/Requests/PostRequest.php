@@ -26,6 +26,12 @@ class PostRequest extends FormRequest
         return [
             'post.title' => 'required|string|max:100',
             'post.feature' => 'required|string|max:4000',
+            'post.category_id' => 'required|integer|exists:categories,id',
+            'post.efficacy' => 'required|string|max:255',
+            'post.attention' => 'nullable|string|max:255',
+            'post.remark' => 'nullable|string|max:255',
+            'post.image' => 'nullable|image|max:2048', 
+            'usages.*' => 'nullable|string|max:255',
         ];
     }
 }

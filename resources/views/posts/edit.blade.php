@@ -158,7 +158,7 @@
             </form>
         </div>
         <div class="back">
-            <button onclick="window.location.href='/'">お薬一覧へ</button>
+            <button onclick="window.location.href='/index'">お薬一覧へ</button>
         </div>
     </x-app-layout>
 </body>
